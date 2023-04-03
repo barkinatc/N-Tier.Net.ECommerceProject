@@ -8,6 +8,10 @@ namespace Project.ENTITIES.Models
 {
     public  class Category:BaseEntity
     {
+        public Category()
+        {
+            Products = new List<Product>(); // My init classında product oluştururken null dönmemesi için.
+        }
         public string CategoryName { get; set; }
         public string Description { get; set; }
 
