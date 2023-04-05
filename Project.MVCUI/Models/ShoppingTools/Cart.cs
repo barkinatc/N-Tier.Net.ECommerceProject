@@ -31,5 +31,22 @@ namespace Project.MVCUI.Models.ShoppingTools
             }
             _sepetim.Add(item.ID, item);
         }
+
+        public void SepettenCikar(int id)
+        {
+            if (_sepetim[id].Amount>1)
+            {
+                _sepetim[id].Amount--;
+                return;
+            }
+            _sepetim.Remove(id);
+        }
+        public decimal TotalPrice
+        {
+            get
+            {
+                return _sepetim.Sum(x => x.Value.SubTotal);
+            }
+        }
     }
 }
