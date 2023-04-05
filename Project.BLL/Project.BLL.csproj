@@ -51,12 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\SingletonPattern\DBTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRep\BaseRepository.cs" />
+    <Compile Include="Repositories\ConcRep\AppUserProfileRepository.cs" />
+    <Compile Include="Repositories\ConcRep\AppUserRepository.cs" />
+    <Compile Include="Repositories\ConcRep\CategoryRepository.cs" />
+    <Compile Include="Repositories\ConcRep\OrderDetailRepository.cs" />
+    <Compile Include="Repositories\ConcRep\OrderRepository.cs" />
+    <Compile Include="Repositories\ConcRep\ProductRepository.cs" />
+    <Compile Include="Repositories\IntRep\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
+      <Project>{47543db4-cad2-40ed-a5ac-e8ad3989803b}</Project>
+      <Name>Project.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.DTO\Project.DTO.csproj">
+      <Project>{1ca7c33e-e6f3-4b87-abb1-4e4d12d58bff}</Project>
+      <Name>Project.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
+      <Project>{c5051eb1-edf0-4040-b314-a7e482fec23c}</Project>
+      <Name>Project.ENTITIES</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
