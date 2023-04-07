@@ -24,6 +24,11 @@ namespace Project.ENTITIES.Models
 
         public virtual AppUserProfile AppUserProfile { get; set; }
 
+        public AppUser()
+        {
+            Role = UserRole.Member;
+            ActivationCode = Guid.NewGuid();
+        }
 
     }
 }

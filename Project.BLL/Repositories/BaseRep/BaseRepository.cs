@@ -17,7 +17,7 @@ namespace Project.BLL.Repositories.BaseRep
 
         public BaseRepository()
         {
-            _db = DBTool._dbInstance;
+            _db = DBTool.DbInstance;
         }
 
         void Save()

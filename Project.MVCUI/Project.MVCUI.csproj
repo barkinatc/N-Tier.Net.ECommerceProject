@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="AuthenticationClasses\AdminAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PageVMs\RegisterNowPageVM.cs" />
     <Compile Include="Models\ShoppingTools\Cart.cs" />
     <Compile Include="Models\ShoppingTools\CartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1976,6 +1978,9 @@
     <Content Include="OuterTools\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="OuterTools\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="OuterTools\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\ListCategories.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1998,15 +2003,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Register\RegisterNow.cshtml" />
+    <Content Include="Views\Register\RegisterOK.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="OuterTools\assets\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="Views\Register\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -2036,9 +2040,25 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Project.BLL\Project.BLL.csproj">
+      <Project>{7c4f6cc5-92b1-493d-b1fc-d16ff367d2cd}</Project>
+      <Name>Project.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.COMMON\Project.COMMON.csproj">
+      <Project>{704dacdd-d75f-45d2-b5e4-d1b9e7188051}</Project>
+      <Name>Project.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.DTO\Project.DTO.csproj">
+      <Project>{1ca7c33e-e6f3-4b87-abb1-4e4d12d58bff}</Project>
+      <Name>Project.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
       <Project>{c5051eb1-edf0-4040-b314-a7e482fec23c}</Project>
       <Name>Project.ENTITIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.VM\Project.VM.csproj">
+      <Project>{94366c9f-4864-45a5-9dfc-86451fcd9437}</Project>
+      <Name>Project.VM</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -26,55 +26,55 @@ namespace Project.DAL.Init
             context.SaveChanges();
 
 
-            ////Kullanıcı 
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    AppUser ap = new AppUser();
+            //Kullanıcı 
+            for (int i = 0; i < 10; i++)
+            {
+                AppUser ap = new AppUser();
 
-            //    ap.UserName = new Internet("tr").UserName();
-            //    ap.Password = new Internet("tr").Password();
-            //    ap.Email = new Internet("tr").Email();
-            //    context.AppUsers.Add(ap);
-            //}
-            //context.SaveChanges();
+                ap.UserName = new Internet("tr").UserName();
+                ap.Password = new Internet("tr").Password();
+                ap.Email = new Internet("tr").Email();
+                context.AppUsers.Add(ap);
+            }
+            context.SaveChanges();
 
-            ////Kullanıcı profili
+            //Kullanıcı profili
 
-            ////i 2 den başlar çünkü 1 admin ekledik.
-            //for (int i = 2; i < 12; i++)
-            //{
-            //    AppUserProfile apu = new AppUserProfile();
-            //    apu.ID = i;
-            //    apu.FirstName = new Name().FirstName();
-            //    apu.LastName = new Name().LastName();
-            //    context.AppUserProfiles.Add(apu);
-
-
-            //}
-            //context.SaveChanges();
-
-            ////CAtegory ekleme
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    Category c = new Category();
-            //    c.CategoryName = new Commerce("tr").Categories(1)[0];
-            //    c.Description = new Lorem("tr").Sentence(10);
+            //i 2 den başlar çünkü 1 admin ekledik.
+            for (int i = 2; i < 12; i++)
+            {
+                AppUserProfile apu = new AppUserProfile();
+                apu.ID = i;
+                apu.FirstName = new Name().FirstName();
+                apu.LastName = new Name().LastName();
+                context.AppUserProfiles.Add(apu);
 
 
-            //    //Categorinin içine product ekleme
-            //    for (int j = 0; j < 30; j++)
-            //    {
-            //        Product p = new Product();
-            //        p.ProductName = new Commerce("tr").ProductName();
-            //        p.UnitPrice = Convert.ToDecimal(new Commerce("tr").Price());
-            //        p.UnitsInStock = 100;  
-            //        c.Products.Add(p);
-            //    }
-            //    context.Categories.Add(c);
-            //    context.SaveChanges();
-            //}
-          
+            }
+            context.SaveChanges();
+
+            //CAtegory ekleme
+
+            for (int i = 0; i < 10; i++)
+            {
+                Category c = new Category();
+                c.CategoryName = new Commerce("tr").Categories(1)[0];
+                c.Description = new Lorem("tr").Sentence(10);
+
+
+                //Categorinin içine product ekleme
+                for (int j = 0; j < 30; j++)
+                {
+                    Product p = new Product();
+                    p.ProductName = new Commerce("tr").ProductName();
+                    p.UnitPrice = Convert.ToDecimal(new Commerce("tr").Price());
+                    p.UnitsInStock = 100;
+                    c.Products.Add(p);
+                }
+                context.Categories.Add(c);
+                context.SaveChanges();
+            }
+
         }
     }
 }

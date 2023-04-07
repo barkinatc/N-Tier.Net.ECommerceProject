@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Project.MVCUI.Controllers
+namespace Project.MVCUI.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class CategoryController : Controller
     {
-        // GET: Home
-        public ActionResult Login()
+        // GET: Admin/Category
+        public ActionResult ListCategories()
         {
             return View();
         }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Project.COMMON.Tools
 {
-    public static class MaiService
+    public static class MailService
     {
-        public static void Send(string receiver, string password = "atlkbjteiruyhww", string body = "Test mesajı.", string subject = "Email Testi", string sender = "yzl3157test@gmail.com")
+        public static void Send(string receiver, string password = "atlkbjteiruyhcww", string body = "Test mesajı.", string subject = "Email Testi", string sender = "yzl3157test@gmail.com")
         {
             MailAddress senderEmail = new MailAddress(sender);
             MailAddress receiverEmail = new MailAddress(receiver);
