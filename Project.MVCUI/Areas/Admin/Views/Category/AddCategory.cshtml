@@ -1,0 +1,47 @@
+﻿@model AdminCategoryVM
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<style>
+    .genislik{
+        width :300px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <section class="panel-heading">
+                <header class="panel-heading">
+                    Kategori Ekleme Sayfası
+                </header>
+                <div class=" panel-body">
+                    Kategori ismi
+                    <div>
+                        @Html.TextBoxFor(x=>x.CategoryName)
+                    </div>
+                    <br />
+                    Kategori Açıklaması
+                    <div>
+                        @Html.TextBoxFor(x=>x.Description)
+                    </div>
+                    <br />
+                    <div>
+                        <button class=" btn btn-primary">
+                            Ekle
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    </div>
+
+}
