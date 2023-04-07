@@ -1,0 +1,53 @@
+﻿@model AdminCategoryUpdatePageVM
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+<h2>UpdateCategory</h2>
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Category.ID)
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <section class="panel-heading">
+                <header class="panel-heading">
+                    Kategori Ekleme Sayfası
+                </header>
+                <div class=" panel-body">
+                    Kategori ismi
+                    <div>
+                        @Html.TextBoxFor(x => x.Category.CategoryName)
+                    </div>
+                    <br />
+                    Kategori Açıklaması
+                    <div>
+                        @Html.TextBoxFor(x => x.Category.Description)
+                    </div>
+                    <br />
+                    <div>
+                        <button class=" btn btn-primary">
+                            Güncelle
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    </div>
+
+}

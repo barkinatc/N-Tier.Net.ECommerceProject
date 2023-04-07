@@ -64,12 +64,54 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         {
             Category c = new Category
             {
+
                 CategoryName = category.CategoryName,
                 Description = category.Description
+
             };
  
             _cRep.Add(c);
 
+            return RedirectToAction("ListCategories");
+        }
+
+        public ActionResult UpdateCategory(int id)
+        {
+            AdminCategoryVM category = _cRep.Where(x => x.ID == id).Select(x => new AdminCategoryVM
+            {
+                ID = x.ID,
+                CategoryName = x.CategoryName,
+                Description = x.Description,
+            }).FirstOrDefault();
+
+            AdminCategoryUpdatePageVM cupvm = new AdminCategoryUpdatePageVM
+            {
+                Category = category
+            };
+
+            return View(cupvm);
+        }
+        [HttpPost]
+        public ActionResult UpdateCategory(AdminCategoryVM category)
+        {
+            
+            Category guncellenecek = _cRep.Find(category.ID);
+
+            guncellenecek.CategoryName = category.CategoryName;
+
+            guncellenecek.Description = category.Description;
+
+            _cRep.Update(guncellenecek);
+
+
+            return RedirectToAction("ListCategories");
+
+
+        }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            _cRep.Delete(_cRep.Find(id));
             return RedirectToAction("ListCategories");
         }
     }
