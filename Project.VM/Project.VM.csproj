@@ -43,8 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PureVMs\AdminCategoryVM.cs" />
+    <Compile Include="PureVMs\AdminProductVM.cs" />
     <Compile Include="PureVMs\AppUserVM.cs" />
     <Compile Include="PureVMs\ProfileVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
+      <Project>{C5051EB1-EDF0-4040-B314-A7E482FEC23C}</Project>
+      <Name>Project.ENTITIES</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

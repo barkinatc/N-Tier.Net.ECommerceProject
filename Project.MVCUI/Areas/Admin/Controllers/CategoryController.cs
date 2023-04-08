@@ -81,7 +81,8 @@ namespace Project.MVCUI.Areas.Admin.Controllers
             {
                 ID = x.ID,
                 CategoryName = x.CategoryName,
-                Description = x.Description,
+                Description = x.Description
+
             }).FirstOrDefault();
 
             AdminCategoryUpdatePageVM cupvm = new AdminCategoryUpdatePageVM
@@ -96,16 +97,12 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         {
             
             Category guncellenecek = _cRep.Find(category.ID);
-
             guncellenecek.CategoryName = category.CategoryName;
-
             guncellenecek.Description = category.Description;
-
             _cRep.Update(guncellenecek);
 
 
             return RedirectToAction("ListCategories");
-
 
         }
 

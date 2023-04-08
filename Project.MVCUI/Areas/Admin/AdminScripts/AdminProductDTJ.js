@@ -3,8 +3,8 @@ function fnFormatDetails(oTable, nTr) {
     var aData = oTable.fnGetData(nTr);
     var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
     sOut += '<tr><td>Kategori Ürün Bilgisi:</td><td><a title="Icerik" href="/Admin/Product/ListProducts/' + aData[1] + '" > ' + aData[2] + ' ürünleri  </a></td></tr>';
-    sOut += '<tr><td>Kategori Detay:</td><td>' + aData[3]+'</td></tr>';
-    
+    sOut += '<tr><td>Kategori Detay:</td><td>' + aData[3] + '</td></tr>';
+
     sOut += '</table>';
 
     return sOut;
