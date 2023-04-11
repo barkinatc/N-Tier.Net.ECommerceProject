@@ -17,5 +17,6 @@ namespace Project.VM.PureVMs
         public string ImagePath { get; set; }
         public int? CategoryID { get; set; }
         public string  CategoryName { get; set; }
+        public string Status { get; set; }
     }
 }

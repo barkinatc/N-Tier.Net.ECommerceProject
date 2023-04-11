@@ -24,7 +24,7 @@ namespace Project.MVCUI.Models.CustomTools
 
                 string fileName = $"{uniqueName}.{name}.{extension} "; // guid kullandıımız için asla bir dosya ismi aynı olmayacak
 
-                if (extension =="jpg" || extension =="gif" || extension == "png")
+                if (extension =="jpg" || extension =="gif" || extension == "png" || extension =="jpeg")
                 {
                     //Eğer guid kullanmasaydık dosya ismi zaten varise
 

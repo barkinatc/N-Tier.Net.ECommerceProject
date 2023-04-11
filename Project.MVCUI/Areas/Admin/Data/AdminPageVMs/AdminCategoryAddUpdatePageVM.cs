@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Project.MVCUI.Areas.Admin.Data.AdminPageVMs
 {
-    public class AdminCategoryUpdatePageVM
+    public class AdminCategoryAddUpdatePageVM
     {
         public AdminCategoryVM    Category { get; set; }
     }

@@ -85,7 +85,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
 
             }).FirstOrDefault();
 
-            AdminCategoryUpdatePageVM cupvm = new AdminCategoryUpdatePageVM
+            AdminCategoryAddUpdatePageVM cupvm = new AdminCategoryAddUpdatePageVM
             {
                 Category = category
             };

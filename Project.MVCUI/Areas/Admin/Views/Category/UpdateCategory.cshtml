@@ -1,4 +1,4 @@
-﻿@model AdminCategoryUpdatePageVM
+﻿@model AdminCategoryAddUpdatePageVM
 @{
     ViewBag.Title = "UpdateCategory";
 }
@@ -24,19 +24,25 @@
 
             <section class="panel-heading">
                 <header class="panel-heading">
-                    Kategori Ekleme Sayfası
+                    Ürün ekleme sayfası
                 </header>
                 <div class=" panel-body">
-                    Kategori ismi
-                    <div>
-                        @Html.TextBoxFor(x => x.Category.CategoryName)
+                    <div class="form-group">
+                        <label class="col-sm-2">Ürün ismi</label>
+                        <div class="col-sm-11">
+                            @Html.TextBoxFor(x =>x.Category.CategoryName)
+                        </div>
                     </div>
-                    <br />
-                    Kategori Açıklaması
-                    <div>
-                        @Html.TextBoxFor(x => x.Category.Description)
+                    <br /> <br />
+                    <div class="form-group">
+
+                        <label class="col-sm-2">Ürün fiyat</label>
+                        <div class="col-sm-11">
+                            @Html.TextBoxFor(x => x.Category.Description)
+                        </div>
                     </div>
-                    <br />
+
+                    <br /><br />
                     <div>
                         <button class=" btn btn-primary">
                             Güncelle
@@ -49,5 +55,6 @@
 
 
     </div>
+
 
 }
