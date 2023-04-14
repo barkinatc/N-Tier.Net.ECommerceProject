@@ -16,7 +16,7 @@ namespace Project.MVCUI
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Category", action = "ListCategories", id = UrlParameter.Optional }
+                defaults: new { controller = "Shopping", action = "ShoppingList", id = UrlParameter.Optional }
             );
         }
     }

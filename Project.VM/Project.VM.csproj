@@ -45,6 +45,8 @@
     <Compile Include="PureVMs\AdminCategoryVM.cs" />
     <Compile Include="PureVMs\AdminProductVM.cs" />
     <Compile Include="PureVMs\AppUserVM.cs" />
+    <Compile Include="PureVMs\CategoryVM.cs" />
+    <Compile Include="PureVMs\ProductVM.cs" />
     <Compile Include="PureVMs\ProfileVM.cs" />
   </ItemGroup>
   <ItemGroup>
