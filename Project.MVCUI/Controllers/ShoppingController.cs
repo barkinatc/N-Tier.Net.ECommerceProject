@@ -105,5 +105,18 @@ namespace Project.MVCUI.Controllers
             TempData["bos"] = "Sepetinizde ürün bulunmamaktadır";
             return RedirectToAction("ShoppingList");
         }
+        public ActionResult DeleteFromCart(int id)
+        {
+            if (Session["scart"] != null)
+            {
+                Cart c = Session["scart"] as Cart;
+                c.SepettenCikar(id);
+                if (c.Sepetim.Count == 0) Session.Remove("scart");
+                return RedirectToAction("CartPage");
+
+            }
+            return RedirectToAction("ListProducts");
+
+        }
     }
 }
