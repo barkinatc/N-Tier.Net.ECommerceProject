@@ -1,0 +1,41 @@
+﻿@model CartPageVM
+@{
+    ViewBag.Title = "CartPage";
+}
+
+<div class="jumbotron">
+    Ödemeniz gereken toplam tutar : @Model.Cart.TotalPrice... Siparişinizi onalymaak için lütfen @Html.ActionLink("tıklayınız","ConfirmOrder")
+
+</div>
+
+<div class="row product-list">
+    @foreach (CartItem item in Model.Cart.Sepetim)
+    {
+        <div class=" col-md-4">
+            <section class="panel">
+                <div class="pro-img-box">
+                    @if (item.ImagePath == null || item.ImagePath == "3" || item.ImagePath == "2" || item.ImagePath.Contains("nightlife"))
+                    {
+                        <img src="~/Pictures/kraftkutu-01-1-550x550.jpg" alt="Resim Yok" title="@item.Name" width="100" height="300" />
+                    }
+                    else
+                    {
+                        <img src="@item.ImagePath" alt="Resim Yok " title="@item.Name" width="100" height="300" />
+                    }
+                    <a href="@Url.Action("DeleteFromCart", new {id = item.ID})" class="adtocart"> <i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+
+                <div class="panel-body text-center">
+                    <h4>
+                        <a href="#" class="pro-title" title="@item.Name">
+                            @item.Name x @item.Amount
+                        </a>
+                    </h4>
+                    <p class="price"> @item.SubTotal</p>
+                </div>
+
+            </section>
+
+        </div>
+    }
+</div>

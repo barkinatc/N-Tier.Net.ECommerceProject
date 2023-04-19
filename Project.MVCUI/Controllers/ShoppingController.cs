@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
 using Project.BLL.Repositories.ConcRep;
+using Project.ENTITIES.Models;
+using Project.MVCUI.Models.PageVMs;
 using Project.MVCUI.Models.ShoppingTools;
 using Project.VM.PureVMs;
 
@@ -29,6 +31,7 @@ namespace Project.MVCUI.Controllers
         {
             IPagedList<ProductVM> products = categoryID == null ? _pRep.Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted).Select(x => new ProductVM
             {
+                ID = x.ID,
                 CategoryID = x.CategoryID,
                 ProductName = x.ProductName,
                 Status = x.Status.ToString(),
@@ -37,6 +40,7 @@ namespace Project.MVCUI.Controllers
                 ImagePath = x.ImagePath
             }).ToPagedList(page ?? 1, 9) : _pRep.Where(x => x.CategoryID == categoryID && x.Status != ENTITIES.Enums.DataStatus.Deleted).Select(x => new ProductVM
             {
+                ID = x.ID,
                 CategoryID = x.CategoryID,
                 ProductName = x.ProductName,
                 Status = x.Status.ToString(),
@@ -64,6 +68,42 @@ namespace Project.MVCUI.Controllers
 
             return View(pvm);
         
+        }
+        public ActionResult AddToCart(int id)
+        {
+            Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
+
+            Product eklenecekUrun = _pRep.Find(id);
+
+            CartItem ci = new CartItem
+            {
+                ID = eklenecekUrun.ID,
+                Name = eklenecekUrun.ProductName,
+                Price = eklenecekUrun.UnitPrice,
+                ImagePath = eklenecekUrun.ImagePath
+            };
+
+            c.SepeteEkle(ci);
+            Session["scart"] = c;
+            return RedirectToAction("ShoppingList");
+
+
+
+            
+        }
+        public ActionResult CartPage()
+        {
+            if (Session["scart"] !=null)
+            {
+                Cart c = Session["scart"] as Cart;
+                CartPageVM cpvm = new CartPageVM
+                {
+                    Cart = c
+                };
+                return View(cpvm);
+            }
+            TempData["bos"] = "Sepetinizde ürün bulunmamaktadır";
+            return RedirectToAction("ShoppingList");
         }
     }
 }

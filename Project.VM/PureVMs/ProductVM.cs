@@ -8,6 +8,7 @@ namespace Project.VM.PureVMs
 {
     public class ProductVM
     {
+        public int ID { get; set; }
         public string ProductName { get; set; }
         public short UnitsInStock { get; set; }
         public decimal UnitPrice { get; set; }
