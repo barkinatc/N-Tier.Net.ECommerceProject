@@ -3,6 +3,11 @@
     ViewBag.Title = "ShoppingList";
 }
 
+<h2>@TempData["sepetBos"]</h2>
+
+@TempData["baglantiRed"]
+@TempData["sorun"]
+@TempData["odeme"]
 <section class="wrapper">
     <!-- page start-->
     <div class="row">
@@ -64,10 +69,10 @@
                                 }
                                 else
                                 {
-                                    <img src="@item.ImagePath" alt="Resim Yok " title="@item.ProductName" width="100" height="300"/>
+                                    <img src="@item.ImagePath" alt="Resim Yok " title="@item.ProductName" width="100" height="300" />
                                 }
 
-                               
+
                                 <a href="@Url.Action("AddToCart", new { id = item.ID})" class="adtocart">
                                     <i class="icon-shopping-cart"></i>
                                 </a>
@@ -96,4 +101,4 @@
     <li>
         <a href="@Url.Action("CartPage","Shopping")"> <i class="icon-shopping-cart"></i>   Cart</a>
     </li>
-    }
+}

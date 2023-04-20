@@ -41,6 +41,10 @@ namespace Project.MVCUI.Models.ShoppingTools
             }
             _sepetim.Remove(id);
         }
+        public void UrunuYokEt(int id)
+        {
+            _sepetim.Remove(id);
+        }
         public decimal TotalPrice
         {
             get

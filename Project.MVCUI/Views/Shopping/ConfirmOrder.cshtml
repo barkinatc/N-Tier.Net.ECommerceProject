@@ -1,0 +1,97 @@
+﻿@model OrderPageVM
+@{
+    ViewBag.Title = "ConfirmOrder";
+}
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <label>
+                Gönderim Adresi
+            </label>
+            <div>
+                @Html.TextAreaFor(x => x.Order.ShippingAddress, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div>
+            <label>
+                Kart Numarası
+            </label>
+            <div>
+                @Html.TextBoxFor(x => x.PaymentRM.CardNumber, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div>
+            <label>
+                Kart Güvenlik Numarası
+            </label>
+            <div>
+                @Html.TextBoxFor(x => x.PaymentRM.SecurityNumber, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div>
+            <label>
+                Geçerlilik Süresi (Yıl)
+            </label>
+            <div>
+                @Html.TextBoxFor(x => x.PaymentRM.CardExpiryYear, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div>
+            <label>
+                Geçerlilik Süresi (Ay)
+            </label>
+            <div>
+                @Html.TextBoxFor(x => x.PaymentRM.CardExpiryMonth, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div>
+            <label>
+                Kart Üzerindeki İsim
+            </label>
+            <div>
+                @Html.TextBoxFor(x => x.PaymentRM.CardUserName, new { @class = "form-control" })
+            </div>
+        </div>
+        if (Session["member"] != null)
+        {
+            <div>
+                <label>
+                    İsim Soyisim
+                </label>
+                <div>
+                    @Html.TextBoxFor(x => x.Order.NonMemberName, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div>
+                <label>
+                    Email
+                </label>
+                <div>
+                    @Html.TextBoxFor(x => x.Order.NonMemberEmail, new { @class = "form-control" })
+                </div>
+            </div>
+
+        }
+
+        <div>
+            <label>
+                Onaylamak İçin Tıklayınız
+            </label>
+            <div>
+                <button class=" btn btn-primary">Onayla</button>
+            </div>
+        </div>
+
+    }
+
+</div>
+
